@@ -1,0 +1,5 @@
+*/node_modules
+*/dist
+*/.sass-cache
+*/.style.css.map
+*/main.out.dsym

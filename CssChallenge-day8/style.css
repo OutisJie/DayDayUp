@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative; }
+
+:root {
+  --color-tan: #C1B9A8;
+  --color-green: #4F735B;
+  --color-gold: #AC8B12;
+  --color-purple: #8D7576;
+  --color-red: #A63C30;
+  --nav-item-offset: 10vw;
+  --nav-item-hover-offset: 2%;
+  --easing: cubic-bezier(.8, 0, .2, 1);
+  --duration: .6s;
+  font-family: 'Libre Baskerville', serif; }
+
+.bar-navigation {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-tan);
+  display: grid;
+  grid-template-rows: 100%;
+  overflow: hidden; }
+  .bar-navigation .nav-list {
+    display: grid;
+    list-style-type: none;
+    counter-reset: list; }
+    .bar-navigation .nav-list .nav-item {
+      position: absolute;
+      height: 100vh;
+      width: 60vw;
+      margin-left: calc(var(--i) * var(--nav-item-offset));
+      z-index: calc(var(--total) - var(--i));
+      transition: transform var(--easing) var(--duration);
+      transform: translateX(calc(-100% + var(--nav-item-offset)));
+      animation: slide-down 1s cubic-bezier(0.5, 0, 0.3, 1);
+      animation-delay: calc(var(--i) * .15s);
+      animation-fill-mode: backwards;
+      display: grid; }
+      .bar-navigation .nav-list .nav-item::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform: translateX(-2vw);
+        transition: transform var(--easing) var(--duration);
+        background-color: var(--color); }
+      .bar-navigation .nav-list .nav-item:hover:not(:focus)::after {
+        transform: none; }
+      .bar-navigation .nav-list .nav-item:focus {
+        transform: none;
+        outline: none; }
+        .bar-navigation .nav-list .nav-item:focus ~ .nav-item {
+          transform: none; }
+      .bar-navigation .nav-list .nav-item:before {
+        counter-increment: list;
+        content: counter(list) ".";
+        display: block;
+        grid-column: 3 / 4;
+        text-align: right;
+        font-size: 8vmin;
+        padding: 2vw;
+        padding-top: 10vh;
+        mix-blend-mode: soft-light;
+        z-index: 1;
+        animation: inherit;
+        animation-name: slide-up; }
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(130%); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+@keyframes slide-down {
+  from {
+    transform: translate(calc(-100% + var(--nav-item-offset)), -100%);
+    pointer-events: none; }
+  to {
+    transform: translate(calc(-100% + var(--nav-item-offset)), 0); } }
+
+/*# sourceMappingURL=style.css.map */

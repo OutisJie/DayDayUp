@@ -1,0 +1,26 @@
+
+html,body,ul,li,p,div,h1,h2,h3,h4,h5{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 900px;
+  padding-bottom: 70px;
+}
+@media only screen and (max-width:780px) {
+  body{
+    min-height:630px;
+  }
+}
+
+.collapsed {
+  margin: 0;
+  overflow: hidden;
+  padding-left: 0;
+  transition: height .3s;
+}

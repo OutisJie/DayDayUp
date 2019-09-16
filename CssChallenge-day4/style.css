@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+* {
+  transition: .7s; }
+
+.box {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif; }
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.button {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  background: #4B5F67;
+  border-radius: 50%;
+  outline: none !important; }
+  .button:hover {
+    background: #E7EBCC;
+    border-radius: 0;
+    transform-origin: 50% 50%;
+    transform: translate(-50%, -50%) rotate(180deg); }
+
+.upper {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100; }
+
+.lights {
+  z-index: 99;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #4B5F67;
+  transform: translate(-50%, -50%) scale(0); }
+  .lights .stripe {
+    width: 30px;
+    height: 3px;
+    background: #4B5F67;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: -170% 50%; }
+    .lights .stripe:nth-child(1) {
+      transform: translate(170%, -50%) rotate(60deg); }
+    .lights .stripe:nth-child(2) {
+      transform: translate(170%, -50%) rotate(120deg); }
+    .lights .stripe:nth-child(3) {
+      transform: translate(170%, -50%) rotate(180deg); }
+    .lights .stripe:nth-child(4) {
+      transform: translate(170%, -50%) rotate(240deg); }
+    .lights .stripe:nth-child(5) {
+      transform: translate(170%, -50%) rotate(300deg); }
+    .lights .stripe:nth-child(6) {
+      transform: translate(170%, -50%) rotate(360deg); }
+
+.button:hover ~ .lights {
+  border-color: #E7EBCC;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0; }
+  .button:hover ~ .lights .stripe {
+    background-color: #E7EBCC; }
+
+.demo {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #E7EBCC;
+  color: #4B5F67; }
+  .demo.dark {
+    background: #4B5F67;
+    color: #E7EBCC;
+    clip-path: circle(0px at 200px 70px); }
+
+.button:hover ~ .demo.dark {
+  clip-path: circle(450px at 200px 70px); }
+
+/*# sourceMappingURL=style.css.map */

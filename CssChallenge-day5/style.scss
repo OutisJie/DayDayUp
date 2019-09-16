@@ -1,0 +1,85 @@
+.box {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.center {
+  width: 400px;
+  position: absolute;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.circle {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.c2 {
+  margin-left: 5px;
+}
+
+.c3 {
+  margin-left: 5px;
+}
+
+.active {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+}
+
+#check1:checked ~ .active {
+  transform: translate(-200%, -50%);
+}
+#check2:checked ~ .active {
+  transform: translate(-50%, -50%);
+}
+#check3:checked ~ .active {
+  transform: translate(100%, -50%);
+}
+
+.bg {
+  position: absolute;
+  background: #3498db;
+  height: 400px;
+  width: 400px;
+  border-left: 400px solid #9b59b6;
+  border-right: 400px solid #1abc9c;
+  left: -400px;
+  transition: all 1s ease;
+  transform: translateX(0px);
+  z-index: -1;
+}
+
+#check1:checked ~ .bg {
+  transform: translateX(400px);
+}
+#check2:checked ~ .bg {
+  transform: translateX(0px);
+}
+#check3:checked ~ .bg {
+  transform: translateX(-400px);
+}
